@@ -47,7 +47,7 @@ pipeline {
         //         // Run Maven deploy
         //         sh 'mvn deploy'
         //     }
-        }
+        // }
     }
 
     post {

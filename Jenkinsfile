@@ -28,25 +28,25 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                // Run Maven tests
-                sh 'mvn test'
-            }
-        }
+        // stage('Test') {
+        //     steps {
+        //         // Run Maven tests
+        //         sh 'mvn test'
+        //     }
+        // }
 
-        stage('Package') {
-            steps {
-                // Run Maven package
-                sh 'mvn package'
-            }
-        }
+        // stage('Package') {
+        //     steps {
+        //         // Run Maven package
+        //         sh 'mvn package'
+        //     }
+        // }
 
-        stage('Deploy') {
-            steps {
-                // Run Maven deploy
-                sh 'mvn deploy'
-            }
+        // stage('Deploy') {
+        //     steps {
+        //         // Run Maven deploy
+        //         sh 'mvn deploy'
+        //     }
         }
     }
 

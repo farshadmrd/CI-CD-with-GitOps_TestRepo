@@ -42,6 +42,8 @@ pipeline {
             }
         }
 
+
+        //deploy on mini kube
         // stage('Deploy') {
         //     steps {
         //         // Run Maven deploy

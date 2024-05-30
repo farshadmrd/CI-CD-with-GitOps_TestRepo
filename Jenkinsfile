@@ -40,16 +40,13 @@ pipeline {
                 // Run Maven package
                 sh 'mvn package'
                 echo 'Package created'
-            }
-        }
-        stage('List Directory') {
-            steps {
-                script {
-                    sh 'ls -l'
-                }
-            }
-        }
+                sh 'ls -l'
+                sh 'pwd'
 
+
+            }
+        }
+       
 
 
         //deploy on mini kube

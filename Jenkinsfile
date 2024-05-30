@@ -40,8 +40,13 @@ pipeline {
                 // Run Maven package
                 sh 'mvn package'
                 echo 'Package created'
-                ls
-                pwd
+            }
+        }
+        stage('List Directory') {
+            steps {
+                script {
+                    sh 'ls -l'
+                }
             }
         }
 

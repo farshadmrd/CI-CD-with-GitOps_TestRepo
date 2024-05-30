@@ -35,12 +35,12 @@ pipeline {
             }
         }
 
-        // stage('Package') {
-        //     steps {
-        //         // Run Maven package
-        //         sh 'mvn package'
-        //     }
-        // }
+        stage('Package') {
+            steps {
+                // Run Maven package
+                sh 'mvn package'
+            }
+        }
 
         // stage('Deploy') {
         //     steps {

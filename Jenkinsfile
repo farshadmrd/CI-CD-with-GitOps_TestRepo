@@ -39,8 +39,12 @@ pipeline {
             steps {
                 // Run Maven package
                 sh 'mvn package'
+                echo 'Package created'
+                ls
+                pwd
             }
         }
+
 
 
         //deploy on mini kube

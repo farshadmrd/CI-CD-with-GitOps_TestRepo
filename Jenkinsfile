@@ -28,12 +28,12 @@ pipeline {
             }
         }
 
-        // stage('Test') {
-        //     steps {
-        //         // Run Maven tests
-        //         sh 'mvn test'
-        //     }
-        // }
+        stage('Test') {
+            steps {
+                // Run Maven tests
+                sh 'mvn test'
+            }
+        }
 
         // stage('Package') {
         //     steps {

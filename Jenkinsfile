@@ -23,26 +23,32 @@ pipeline {
 
         stage('Build') {
             steps {
-                // Run Maven build
-                sh 'mvn clean package $MAVEN_CLI_OPTS'
+                dir('microservice/hello-world') {
+                    // Run Maven build
+                    sh 'mvn clean package $MAVEN_CLI_OPTS'
+                }
             }
         }
 
         stage('Test') {
             steps {
-                // Run Maven tests
-                sh 'mvn test'
+                dir('microservice/hello-world') {
+                    // Run Maven tests
+                    sh 'mvn test'
+                }
             }
         }
 
         stage('Package') {
             steps {
-                // Run Maven package
-                sh 'mvn package'
-                echo 'Package created'
-                sh 'ls -l'
-                sh 'pwd'
+                dir('microservice/hello-world') {
 
+                    // Run Maven package
+                    sh 'mvn package'
+                    echo 'Package created'
+                    sh 'ls -l'
+                    sh 'pwd'
+                }
 
             }
         }

@@ -23,7 +23,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                dir('microservice/hello-world') {
+                dir('microservices/hello-world') {
                     // Run Maven build
                     sh 'mvn clean package $MAVEN_CLI_OPTS'
                 }
@@ -32,7 +32,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                dir('microservice/hello-world') {
+                dir('microservices/hello-world') {
                     // Run Maven tests
                     sh 'mvn test'
                 }
@@ -41,7 +41,7 @@ pipeline {
 
         stage('Package') {
             steps {
-                dir('microservice/hello-world') {
+                dir('microservices/hello-world') {
 
                     // Run Maven package
                     sh 'mvn package'

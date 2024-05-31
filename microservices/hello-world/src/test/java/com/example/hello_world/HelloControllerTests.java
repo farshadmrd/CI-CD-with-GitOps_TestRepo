@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.hello_world;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -12,7 +12,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class HelloControllerSmokeTests {
+public class HelloControllerTests {
 
     @Autowired
     private MockMvc mockMvc;

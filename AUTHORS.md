@@ -1,7 +1,6 @@
 # AUTHORS
 
-**Owners:**
-
+## Owners
 
     fullName: Stefano Trucco,
     email: stefano.trucco@ericsson.com
@@ -9,10 +8,7 @@
     fullName: Giacomo Agostini,
     email: giacomo.agostini@ericsson.com
 
-
-
-**Developers:**
-
+## Developers
 
     fullName : Farshad MoradiShahrbabak,
     email: fa.moradi2000@gmail.com

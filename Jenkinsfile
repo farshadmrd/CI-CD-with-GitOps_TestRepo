@@ -7,8 +7,8 @@ pipeline {
         maven 'Maven 3.6.3'
         // Install the JDK version configured in Jenkins
         jdk 'JDK 17'
+        // Install the Python version configured in Jenkins
         python 'Python 3.8'
-
     }
 
     environment {

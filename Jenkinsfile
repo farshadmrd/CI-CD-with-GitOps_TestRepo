@@ -55,7 +55,7 @@ pipeline {
                 // Run the Python script. Replace 'simpleTest.py' with the actual file name
                 sh 'python simpleTest.py'
             }
-
+        }
         stage('Package') {
             steps {
                 dir('microservices/hello-world') {

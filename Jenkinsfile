@@ -34,7 +34,7 @@ pipeline {
             steps {
                 dir('microservices/hello-world') {
                     // Run Maven tests
-                    sh 'mvn test'
+                    sh './mvnw test'
                 }
             }
         }

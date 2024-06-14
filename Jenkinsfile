@@ -7,6 +7,8 @@ pipeline {
         maven 'Maven 3.6.3'
         // Install the JDK version configured in Jenkins
         jdk 'JDK 17'
+        python 'Python 3.8'
+
     }
 
     environment {
@@ -41,23 +43,23 @@ pipeline {
             }
         }
 
-        // stage('Checkout to test files') {
-        //     steps {
-        //         // Checkout code from version control
-        //         git url: 'https://github.com/farshadmrd/testFiles_Jenkins.git', branch: 'main'
-        //     }
-        // }
+        stage('Checkout to test files') {
+            steps {
+                // Checkout code from version control
+                git url: 'https://github.com/farshadmrd/testFiles_Jenkins.git', branch: 'main'
+            }
+        }
 
-        // stage('Run Python Script') {
+        stage('Run Python Script') {
 
-        //     steps {
-        //         // Ensure Python is available in the environment
-        //         sh 'python --version'
+            steps {
+                // Ensure Python is available in the environment
+                sh 'python --version'
                 
-        //         // Run the Python script. Replace 'simpleTest.py' with the actual file name
-        //         sh 'python simpleTest.py'
-        //     }
-        // }
+                // Run the Python script. Replace 'simpleTest.py' with the actual file name
+                sh 'python simpleTest.py'
+            }
+        }
         stage('Package') {
             steps {
                 dir('microservices/hello-world') {

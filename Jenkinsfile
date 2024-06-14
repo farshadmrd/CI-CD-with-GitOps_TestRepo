@@ -34,6 +34,7 @@ pipeline {
             steps {
                 dir('microservices/hello-world') {
                     // Run Maven tests
+                    sh 'chmod +x ./mvnw'
                     sh './mvnw test'
                 }
             }

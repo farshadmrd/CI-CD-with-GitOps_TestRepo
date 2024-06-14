@@ -47,7 +47,7 @@ pipeline {
             }
         }
 
-         stage('Run Python Script') {
+        stage('Run Python Script') {
             steps {
                 // Ensure Python is available in the environment
                 sh 'python --version'

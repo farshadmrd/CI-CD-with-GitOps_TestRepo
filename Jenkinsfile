@@ -48,6 +48,14 @@ pipeline {
         }
 
         stage('Run Python Script') {
+
+            agent {
+                docker {
+                image 'python:3'
+                label 'my-build-agent'
+                }
+            }
+
             steps {
                 // Ensure Python is available in the environment
                 sh 'python --version'

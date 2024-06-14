@@ -40,7 +40,7 @@ pipeline {
             }
         }
 
-        stage('Checkout') {
+        stage('Checkout to test files') {
             steps {
                 // Checkout code from version control
                 git url: 'https://github.com/farshadmrd/testFiles_Jenkins.git', branch: 'main'

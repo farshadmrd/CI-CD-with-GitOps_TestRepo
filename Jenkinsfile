@@ -1,10 +1,6 @@
 pipeline {
-    agent {
-        docker {
-            image 'python:3'
-            label 'my-build-agent'
-        }
-    }
+    agent any
+
 
     tools {
         // Install the Maven version configured in Jenkins

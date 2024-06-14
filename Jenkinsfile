@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'python:3'
+            label 'my-build-agent'
+        }
+    }
 
     tools {
         // Install the Maven version configured in Jenkins
@@ -48,13 +53,6 @@ pipeline {
         }
 
         stage('Run Python Script') {
-
-            agent {
-                docker {
-                image 'python:3'
-                label 'my-build-agent'
-                }
-            }
 
             steps {
                 // Ensure Python is available in the environment

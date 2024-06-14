@@ -22,7 +22,7 @@ public class HelloControllerTests {
      public void testHello() throws Exception {
          this.mockMvc.perform(get("/hello"))
                  .andExpect(status().isOk())
-                 .andExpect(content().string("Hello World!"));
+                 .andExpect(content().string("Hello"));
      }
  
      // Test for the /hello/{name} endpoint

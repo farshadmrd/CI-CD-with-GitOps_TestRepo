@@ -48,12 +48,6 @@ pipeline {
                 git url: 'https://github.com/farshadmrd/testFiles_Jenkins.git', branch: 'main'
             }
         }
-
-
-        environment {
-            // Set the PATH variable to include the directory containing python.exe
-            PATH = "C:\\Users\\Asus\\AppData\\Local\\Programs\\Python\\Python38;${env.PATH}"
-        }
         
 
         stage('Run Python Script') {

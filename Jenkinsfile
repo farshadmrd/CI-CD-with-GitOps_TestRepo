@@ -42,24 +42,7 @@ pipeline {
             }
         }
 
-        // stage('Checkout to test files') {
-        //     steps {
-        //         // Checkout code from version control
-        //         git url: 'https://github.com/farshadmrd/testFiles_Jenkins.git', branch: 'main'
-        //     }
-        // }
-        
-
-        // stage('Run Python Script') {
-
-        //     steps {
-        //         // Ensure Python is available in the environment
-        //         sh 'python --version'
-                
-        //         // Run the Python script. Replace 'simpleTest.py' with the actual file name
-        //         sh 'python simpleTest.py'
-        //     }
-        // }
+       
         stage('Package') {
             steps {
                 dir('microservices/hello-world') {
@@ -74,6 +57,30 @@ pipeline {
             }
         }
        
+
+        // stage('Checkout to test files') {
+        //     steps {
+        //         // Checkout code from version control
+        //         git url: 'https://github.com/farshadmrd/testFiles_Jenkins.git', branch: 'main'
+        //     }
+        // }
+        
+        stage('Setup Python') {
+            steps {
+                sh 'python3 --version' // Check Python version
+            }
+        }
+
+        // stage('Run Python Script') {
+
+        //     steps {
+        //         // Ensure Python is available in the environment
+        //         sh 'python --version'
+                
+        //         // Run the Python script. Replace 'simpleTest.py' with the actual file name
+        //         sh 'python simpleTest.py'
+        //     }
+        // }
 
 
         //deploy on mini kube

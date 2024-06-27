@@ -50,16 +50,16 @@ pipeline {
         }
         
 
-        stage('Run Python Script') {
+        // stage('Run Python Script') {
 
-            steps {
-                // Ensure Python is available in the environment
-                sh 'python --version'
+        //     steps {
+        //         // Ensure Python is available in the environment
+        //         sh 'python --version'
                 
-                // Run the Python script. Replace 'simpleTest.py' with the actual file name
-                sh 'python simpleTest.py'
-            }
-        }
+        //         // Run the Python script. Replace 'simpleTest.py' with the actual file name
+        //         sh 'python simpleTest.py'
+        //     }
+        // }
         stage('Package') {
             steps {
                 dir('microservices/hello-world') {

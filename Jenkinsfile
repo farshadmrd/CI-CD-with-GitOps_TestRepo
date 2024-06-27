@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'python:3.8' }
+        dockerContainer { image 'python:3.8' }
     }
 
     tools {

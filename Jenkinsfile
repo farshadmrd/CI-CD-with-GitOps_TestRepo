@@ -1,7 +1,6 @@
 pipeline {
-   agent {
-        docker { image 'python:3.8' }
-    }
+    agent any
+
 
     tools {
         // Install the Maven version configured in Jenkins
@@ -68,7 +67,9 @@ pipeline {
         
         stage('Setup Python') {
             steps {
-                sh 'python --version' // Check Python version
+                docker.image('python:3.8').inside {
+                    sh 'python --version' // Check Python version
+                }
             }
         }
 

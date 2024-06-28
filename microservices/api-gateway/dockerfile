@@ -1,0 +1,17 @@
+# Start with a base image containing JDK and Maven
+FROM maven:3.8.4-openjdk-17
+
+# Add Maintainer Info
+LABEL maintainer="your-email@example.com"
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the project files
+COPY . .
+
+
+
+# Install project dependencies and run the application
+# RUN ./mvnw spring-boot:run
+CMD ["/bin/sh"]

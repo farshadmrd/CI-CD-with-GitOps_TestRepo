@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        dockerContainer { image 'python:3.8' }
-    }
+    agent any
 
     tools {
         // Install the Maven version configured in Jenkins

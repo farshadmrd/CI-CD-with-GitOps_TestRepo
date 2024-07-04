@@ -6,8 +6,6 @@ pipeline {
         maven 'Maven 3.6.3'
         // Install the JDK version configured in Jenkins
         jdk 'JDK 17'
-        jenkins.plugins.shiningpanda.tools.PythonInstallation 'Python-3.8.0'
-
     }
 
     environment {

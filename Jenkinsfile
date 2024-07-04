@@ -13,7 +13,7 @@ pipeline {
         // Install the JDK version configured in Jenkins
         jdk 'JDK 17'
         // dockerTool 'docker-26.1.1'
-        'jenkins.plugins.shiningpanda.tools.PythonInstallation' 'Python38'
+        'jenkins.plugins.shiningpanda.tools.PythonInstallation' 'Python3'
     }
 
     environment {
@@ -74,7 +74,7 @@ pipeline {
         stage('Setup Python') {
          
             steps {
-                sh 'python --version' // Check Python version
+                sh 'python3 --version' // Check Python version
             }
         }
 

@@ -11,7 +11,7 @@ pipeline {
         maven 'Maven 3.6.3'
         // Install the JDK version configured in Jenkins
         jdk 'JDK 17'
-        docker '26.1.1'
+        dockerTool '26.1.1'
     }
 
     environment {

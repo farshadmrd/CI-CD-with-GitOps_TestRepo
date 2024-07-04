@@ -73,26 +73,8 @@ pipeline {
         
         stage('Setup Python') {
          
-            // agent {
-            //     docker {
-            //         image '3.9.19-alpine'
-            //     }
-            // }
             steps {
-                sh "cd /var/jenkins_home/tools/jenkins.plugins.shiningpanda.tools.PythonInstallation/Python-3.12.4"
-                sh 'ls -l'
-                sh 'pwd'
-
-
-                // sh 'python --version' // Check Python version
-
-                // script {
-                //     // Run the command and capture the output
-                //     def pythonVersionOutput = sh(script: 'python --version', returnStdout: true).trim()
-                //     // Print the output
-                //     echo "Python Version: ${pythonVersionOutput}"
-                // }
-                    
+                sh 'python --version' // Check Python version
             }
         }
 

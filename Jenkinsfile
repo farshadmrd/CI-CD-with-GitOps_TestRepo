@@ -66,11 +66,14 @@ pipeline {
         
         stage('Setup Python') {
             steps {
+                script {
                     // sh 'python --version' // Check Python version
                     // Run the command and capture the output
                     def mvnVersionOutput = sh(script: 'mvn -v', returnStdout: true).trim()
                     // Print the output
                     echo "Maven Version: ${mvnVersionOutput}"
+                }
+                    
             }
         }
 

@@ -81,7 +81,7 @@ pipeline {
                 script {
                     // sh 'python --version' // Check Python version
                     // Run the command and capture the output
-                    def pythonVersionOutput = sh(script: 'python --version', returnStdout: true).trim()
+                    def pythonVersionOutput = sh(script: 'python3 --version', returnStdout: true).trim()
                     // Print the output
                     echo "Python Version: ${pythonVersionOutput}"
                 }

@@ -1,7 +1,7 @@
 # CI/CD with GitOps
 
 <img src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white" /> <img src="https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white" /> <img src="https://img.shields.io/badge/Jenkins-D24939?style=for-the-badge&logo=Jenkins&logoColor=white" /> <img src="https://img.shields.io/badge/Ansible-000000?style=for-the-badge&logo=ansible&logoColor=white" /> <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" />
-gasdf,jhnjnj,m 
+
 The project proposed consists of defining and implementing an automatic pipeline with 3 stages based on the GitOps framework used to:
 - build a simple micro-services application using the [Spring Boot](https://spring.io/) framework
 - execute smoke tests on the application

@@ -13,7 +13,7 @@ pipeline {
         // Install the JDK version configured in Jenkins
         jdk 'JDK 17'
         // dockerTool 'docker-26.1.1'
-        jenkins.plugins.shiningpanda.tools.PythonInstallation 'Python-3.8.0'
+        'jenkins.plugins.shiningpanda.tools.PythonInstallation' 'Python-3.8.0'
     }
 
     environment {

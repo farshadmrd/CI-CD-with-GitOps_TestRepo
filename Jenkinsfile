@@ -3,7 +3,7 @@ pipeline {
 
     tools {
         // Install the Maven version configured in Jenkins
-        // maven 'Maven 3.6.3'
+        maven 'Maven 3.6.3'
         // Install the JDK version configured in Jenkins
         jdk 'JDK 17'
 
@@ -69,9 +69,9 @@ pipeline {
                 script {
                     // sh 'python --version' // Check Python version
                     // Run the command and capture the output
-                    def mvnVersionOutput = sh(script: 'mvn -v', returnStdout: true).trim()
+                    def pythonVersionOutput = sh(script: 'python --version', returnStdout: true).trim()
                     // Print the output
-                    echo "Maven Version: ${mvnVersionOutput}"
+                    echo "Python Version: ${pythonVersionOutput}"
                 }
                     
             }

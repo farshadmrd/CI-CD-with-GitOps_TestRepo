@@ -66,7 +66,7 @@ pipeline {
         stage('Setup Python') {
             agent {
                 docker {
-                    image 'python:3.8'
+                    image '3.9.19-alpine'
                 }
             }
             steps {

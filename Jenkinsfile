@@ -1,17 +1,19 @@
 pipeline {
-    agent {
-        any {
-            image 'python:3.9'
-            args '-u root:root'
-        }
-    }    
+    agent any
+    // agent {
+    //     any {
+    //         image 'python:3.9'
+    //         args '-u root:root'
+    //     }
+    // }    
 
     tools {
         // Install the Maven version configured in Jenkins
         maven 'Maven 3.6.3'
         // Install the JDK version configured in Jenkins
         jdk 'JDK 17'
-        dockerTool 'docker-26.1.1'
+        // dockerTool 'docker-26.1.1'
+        python 'Python-3.8.0'
     }
 
     environment {
@@ -70,11 +72,11 @@ pipeline {
         // }
         
         stage('Setup Python') {
-            agent {
-                docker {
-                    image '3.9.19-alpine'
-                }
-            }
+            // agent {
+            //     docker {
+            //         image '3.9.19-alpine'
+            //     }
+            // }
             steps {
                 script {
                     // sh 'python --version' // Check Python version

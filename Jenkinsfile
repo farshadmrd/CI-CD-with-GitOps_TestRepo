@@ -64,6 +64,11 @@ pipeline {
         // }
         
         stage('Setup Python') {
+            agent {
+                docker {
+                    image 'python:3.8'
+                }
+            }
             steps {
                 script {
                     // sh 'python --version' // Check Python version

@@ -15,7 +15,7 @@ pipeline {
 
         // python 'Python3'
         // dockerTool 'docker-26.1.1'
-        'jenkins.plugins.shiningpanda.tools.PythonInstallation' 'Python3'
+        // 'jenkins.plugins.shiningpanda.tools.PythonInstallation' 'Python3'
         // dockerTool "docker-26.1.1"
     }
 

@@ -1,11 +1,5 @@
 pipeline {
-    // agent any
-    agent {
-        docker {
-            image 'python:3.9'
-            args '-u root:root'
-        }
-    }    
+        // agent any
 
     tools {
         // Install the Maven version configured in Jenkins
@@ -16,6 +10,15 @@ pipeline {
         // 'jenkins.plugins.shiningpanda.tools.PythonInstallation' 'Python3'
         dockerTool "docker-26.1.1"
     }
+
+    agent {
+        docker {
+            image 'python:3.9'
+            args '-u root:root'
+        }
+    }    
+
+ 
 
     environment {
         // Define environment variables

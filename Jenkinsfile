@@ -1,11 +1,11 @@
 pipeline {
-    agent any
-    // agent {
-    //     any {
-    //         image 'python:3.9'
-    //         args '-u root:root'
-    //     }
-    // }    
+    // agent any
+    agent {
+        any {
+            image 'python:3.9'
+            args '-u root:root'
+        }
+    }    
 
     tools {
         // Install the Maven version configured in Jenkins
@@ -74,7 +74,7 @@ pipeline {
         stage('Setup Python') {
          
             steps {
-                sh 'python3 --version'  // Check Python version
+                // sh 'python3 --version'  // Check Python version
                 sh 'python --version'  // Check Python version
 
             }

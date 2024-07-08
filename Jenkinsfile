@@ -83,21 +83,21 @@ pipeline {
             steps {
                 script{
                     // Update the package list and install prerequisites
-                    sh 'sudo apt-get update'
-                    sh 'sudo apt-get install -y software-properties-common'
+                    sh 'apt-get update'
+                    sh 'apt-get install -y software-properties-common'
                     
                     // Add the deadsnakes PPA for installing different Python versions
-                    sh 'sudo add-apt-repository -y ppa:deadsnakes/ppa'
+                    sh 'add-apt-repository -y ppa:deadsnakes/ppa'
                     
                     // Update the package list again
-                    sh 'sudo apt-get update'
+                    sh 'apt-get update'
                     
                     // Install Python 3.9
-                    sh 'sudo apt-get install -y python3.9'
+                    sh 'apt-get install -y python3.9'
                     
                     // Optionally, create a symlink to use 'python3.9' as 'python3' or 'python'
-                    sh 'sudo ln -s /usr/bin/python3.9 /usr/bin/python3'
-                    sh 'sudo ln -s /usr/bin/python3.9 /usr/bin/python'
+                    sh 'ln -s /usr/bin/python3.9 /usr/bin/python3'
+                    sh 'ln -s /usr/bin/python3.9 /usr/bin/python'
 
                     sh 'python --version'
 

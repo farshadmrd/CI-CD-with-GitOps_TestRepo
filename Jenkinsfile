@@ -13,7 +13,7 @@ pipeline {
         // Install the JDK version configured in Jenkins
         jdk 'JDK 17'
 
-        // python 'Python3'
+        python 'Python3'
         // dockerTool 'docker-26.1.1'
         // 'jenkins.plugins.shiningpanda.tools.PythonInstallation' 'Python3'
         // dockerTool "docker-26.1.1"
@@ -82,23 +82,7 @@ pipeline {
          
             steps {
                 script{
-                    // Update the package list and install prerequisites
-                    sh 'apt-get update'
-                    sh 'apt-get install -y software-properties-common'
-                    
-                    // Add the deadsnakes PPA for installing different Python versions
-                    sh 'add-apt-repository -y ppa:deadsnakes/ppa'
-                    
-                    // Update the package list again
-                    sh 'apt-get update'
-                    
-                    // Install Python 3.9
-                    sh 'apt-get install -y python3.9'
-                    
-                    // Optionally, create a symlink to use 'python3.9' as 'python3' or 'python'
-                    sh 'ln -s /usr/bin/python3.9 /usr/bin/python3'
-                    sh 'ln -s /usr/bin/python3.9 /usr/bin/python'
-
+                
                     sh 'python --version'
 
                 }

@@ -81,8 +81,12 @@ pipeline {
         stage('Setup Python') {
          
             steps {
-                // sh 'python3 --version'  // Check Python version
-                sh 'python --version'  // Check Python version
+                script{
+
+                   def pythonHome = tool name: 'Python 3.9', type: 'Python'
+                    env.PATH = "${pythonHome}/bin:${env.PATH}"
+                    sh 'python --version'
+                }
 
             }
         }

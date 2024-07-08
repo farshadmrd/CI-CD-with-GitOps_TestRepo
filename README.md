@@ -8,7 +8,6 @@ The project proposed consists of defining and implementing an automatic pipeline
 - release application directly on a server in a simulated customer premises
 
 This project must use tools such as [GitHub Actions](https://docs.github.com/en/actions), [Ansible](https://www.ansible.com/), and [Jenkins](https://www.jenkins.io/) to build this pipeline.
-
 ## Ericsson
 
 Ericsson is a global leader in communications technology, focusing on innovation and collaboration to shape the future of connectivity. They are at the forefront of 5G technology, offering unprecedented speed, flexibility, and reliability. Their solutions span from edge computing to IoT, aiming to simplify global connectivity and enable businesses to scale their operations efficiently.

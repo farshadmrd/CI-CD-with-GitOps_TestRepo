@@ -1,15 +1,13 @@
 pipeline {
-    agent {
-        docker {
-            image 'python:3.9'
-        }
-    }
+    agent any
 
     tools {
         // Install the Maven version configured in Jenkins
         maven 'Maven 3.6.3'
         // Install the JDK version configured in Jenkins
         jdk 'JDK 17'
+        // Install the Python version configured in Jenkins
+        python 'Python3'
     }
 
     environment {
@@ -56,11 +54,18 @@ pipeline {
             }
         }
 
-        stage('Run Python Command') {
+        stage('Setup Python') {
             steps {
                 script {
                     // Check Python version
                     sh 'python --version'
+                }
+            }
+        }
+
+        stage('Run Python Command') {
+            steps {
+                script {
                     // Run a simple Python command
                     sh 'python -c "print(\'Hello, World!\')"'
                 }

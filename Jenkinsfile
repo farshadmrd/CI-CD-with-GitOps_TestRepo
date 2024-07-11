@@ -7,7 +7,7 @@ pipeline {
         // Install the JDK version configured in Jenkins
         jdk 'JDK 17'
         // Install the Python version configured in Jenkins
-        python 'Python3'
+        'jenkins.plugins.shiningpanda.tools.PythonInstallation' 'Python3'
     }
 
     environment {

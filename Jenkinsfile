@@ -11,9 +11,9 @@ pipeline {
             steps {
                 script {
                     // Check Python version
-                    sh 'python --version'
+                    sh 'python3 --version'
                     // Run a simple Python command
-                    sh 'python -c "print(\'Hello, World!\')"'
+                    sh 'python3 -c "print(\'Hello, World!\')"'
                 }
             }
         }

@@ -2,8 +2,9 @@ pipeline {
     agent any
 
     tools {
-        // Install the Python version configured in Jenkins
-        'jenkins.plugins.shiningpanda.tools.PythonInstallation' 'Python3'
+        // Use the configured Maven and JDK installations
+        maven 'Maven 3.6.3'
+        jdk 'JDK 17'
     }
 
     stages {
@@ -11,9 +12,9 @@ pipeline {
             steps {
                 script {
                     // Check Python version
-                    sh 'python3 --version'
+                    sh 'python --version'
                     // Run a simple Python command
-                    sh 'python3 -c "print(\'Hello, World!\')"'
+                    sh 'python -c "print(\'Hello, World!\')"'
                 }
             }
         }

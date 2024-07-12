@@ -60,19 +60,21 @@ pipeline {
         }
        
 
-        // stage('Checkout to test files') {
-        //     steps {
-        //         // Checkout code from version control
-        //         git url: 'https://github.com/farshadmrd/testFiles_Jenkins.git', branch: 'main'
-        //     }
-        // }
+        stage('Checkout to test files') {
+            steps {
+                // Checkout code from version control
+                git url: 'https://github.com/farshadmrd/testFiles_Jenkins.git', branch: 'main'
+            }
+        }
         
         stage('Setup Python') {
          
             steps {
                 script{
-                
+                    
                     sh 'python --version'
+                    sh 'python simpleTest.py'
+
 
                 }
 

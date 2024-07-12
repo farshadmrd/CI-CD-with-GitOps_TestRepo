@@ -2,32 +2,102 @@ pipeline {
     agent any
 
     tools {
-        // Use the configured Maven and JDK installations
+        // Install the Maven version configured in Jenkins
         maven 'Maven 3.6.3'
+        // Install the JDK version configured in Jenkins
         jdk 'JDK 17'
     }
 
+   
+
+ 
+
+    environment {
+        // Define environment variables
+        MAVEN_CLI_OPTS = '-B -DskipTests'
+    }
+
     stages {
-        stage('Run Python Command') {
+        stage('Checkout') {
             steps {
-                script {
-                    // Check Python version
-                    sh 'python --version'
-                    // Run a simple Python command
-                    sh 'python -c "print(\'Hello, World!\')"'
+                // Checkout code from version control
+                git url: 'https://github.com/farshadmrd/jenkins_test.git', branch: 'main'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                dir('microservices/hello-world') {
+                    // Run Maven build
+                    sh 'mvn clean package $MAVEN_CLI_OPTS'
                 }
             }
         }
+
+        stage('Test') {
+            steps {
+                dir('microservices/hello-world') {
+                    // Run Maven tests
+                    sh 'chmod +x ./mvnw'
+                    sh './mvnw test'
+                }
+            }
+        }
+
+       
+        stage('Package') {
+            steps {
+                dir('microservices/hello-world') {
+
+                    // Run Maven package
+                    sh 'mvn package'
+                    echo 'Package created'
+                    sh 'ls -l'
+                    sh 'pwd'
+                }
+
+            }
+        }
+       
+
+        // stage('Checkout to test files') {
+        //     steps {
+        //         // Checkout code from version control
+        //         git url: 'https://github.com/farshadmrd/testFiles_Jenkins.git', branch: 'main'
+        //     }
+        // }
+        
+        stage('Setup Python') {
+         
+            steps {
+                script{
+                
+                    sh 'python --version'
+
+                }
+
+            }
+        }
+
+
+
+        //deploy on mini kube
+        // stage('Deploy') {
+        //     steps {
+        //         // Run Maven deploy
+        //         sh 'mvn deploy'
+        //     }
+        // }
     }
 
     post {
         success {
             // Notify success
-            echo 'Python command executed successfully'
+            echo 'Build and Test Successful'
         }
         failure {
             // Notify failure
-            echo 'Python command execution failed'
+            echo 'Build or Test Failed'
         }
     }
 }

@@ -73,6 +73,8 @@ pipeline {
                 script{
                     
                     sh 'python --version'
+                    sh 'ls -l'
+                    sh 'pwd'
                     sh 'python simpleTest.py'
 
 

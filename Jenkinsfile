@@ -2,13 +2,13 @@ pipeline {
     agent any
 
 
-    tools {
-        // Install the Maven version configured in Jenkins
-        maven 'Maven 3.6.3'
-        // Install the JDK version configured in Jenkins
-        jdk 'JDK 17'
+    // tools {
+    //     // Install the Maven version configured in Jenkins
+    //     maven 'Maven 3.6.3'
+    //     // Install the JDK version configured in Jenkins
+    //     jdk 'JDK 17'
 
-    }
+    // }
 
     environment {
         // Define environment variables

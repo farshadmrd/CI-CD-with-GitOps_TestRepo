@@ -28,8 +28,7 @@ pipeline {
                 script {
                       // Ensure Docker is running and enabled
                     sh '''
-                    sudo systemctl start docker
-                    sudo systemctl enable docker
+                     sudo service docker start
                     '''
                     // Start Minikube if it's not already running
                     sh '''

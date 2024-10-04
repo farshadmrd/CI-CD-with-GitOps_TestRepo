@@ -26,6 +26,11 @@ pipeline {
         stage('Start Minikube') {
             steps {
                 script {
+                      // Ensure Docker is running and enabled
+                    sh '''
+                    sudo systemctl start docker
+                    sudo systemctl enable docker
+                    '''
                     // Start Minikube if it's not already running
                     sh '''
                     if ! minikube status | grep -q "host: Running"; then
@@ -63,7 +68,7 @@ pipeline {
         // stage('Checkout to test files') {
         //     steps {
         //         // Checkout code from version control
-        //         git url: 'https://github.com/farshadmrd/testFiles_Jenkins.git', branch: 'main'
+        //         git url: 'https://github.com/farshadmrd/CI-CD-with-GitOps_SmokeTestsFiles', branch: 'main'
         //     }
         // }
         
@@ -78,6 +83,11 @@ pipeline {
         //         sh 'python simpleTest.py'
         //     }
         // }
+
+
+
+
+
         // stage('Package') {
         //     steps {
         //         dir('microservices/hello-world') {
@@ -94,11 +104,10 @@ pipeline {
        
 
 
-        //deploy on mini kube
+        //deploy on the server
         // stage('Deploy') {
         //     steps {
-        //         // Run Maven deploy
-        //         sh 'mvn deploy'
+        //         //deploy the application on the server
         //     }
         // }
     }

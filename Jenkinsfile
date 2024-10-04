@@ -33,7 +33,7 @@ pipeline {
                     // Start Minikube if it's not already running
                     sh '''
                     if ! minikube status | grep -q "host: Running"; then
-                        minikube start
+                        minikube start --driver=docker
                     else
                         echo "Minikube is already running."
                     fi

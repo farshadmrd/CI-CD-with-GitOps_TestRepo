@@ -29,6 +29,7 @@ pipeline {
                       // Ensure Docker is running and enabled
                     sh '''
                      sudo service docker start
+                     sudo docker info
                     '''
                     // Start Minikube if it's not already running
                     sh '''

@@ -10,9 +10,13 @@ pipeline {
 
     // }
 
+    // environment {
+    //     // Define environment variables
+    //     MAVEN_CLI_OPTS = '-B -DskipTests'
+    // }
+
     environment {
-        // Define environment variables
-        MAVEN_CLI_OPTS = '-B -DskipTests'
+        PATH = "/opt/homebrew/bin:/usr/local/bin:${env.PATH}" // Add Minikube and Docker paths while preserving the existing PATH
     }
 
     stages {
@@ -23,25 +27,38 @@ pipeline {
             }
         }
 
+
         stage('Start Minikube') {
             steps {
                 script {
-                      // Ensure Docker is running and enabled
                     sh '''
-                     sudo service docker start
-                     sudo docker info
-                    '''
-                    // Start Minikube if it's not already running
-                    sh '''
-                    if ! minikube status | grep -q "host: Running"; then
-                        minikube start --driver=docker
-                    else
-                        echo "Minikube is already running."
-                    fi
+                    echo "Starting Minikube..."
+                    minikube start
                     '''
                 }
             }
         }
+
+    
+        // stage('Start Minikube') {
+        //     steps {
+        //         script {
+        //               // Ensure Docker is running and enabled
+        //             sh '''
+        //              sudo service docker start
+        //              sudo docker info
+        //             '''
+        //             // Start Minikube if it's not already running
+        //             sh '''
+        //             if ! minikube status | grep -q "host: Running"; then
+        //                 minikube start --driver=docker
+        //             else
+        //                 echo "Minikube is already running."
+        //             fi
+        //             '''
+        //         }
+        //     }
+        // }
 
     //   stage('Build Docker Images in Minikube') {
     //         steps {

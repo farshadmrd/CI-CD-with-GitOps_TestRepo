@@ -16,7 +16,8 @@ pipeline {
     // }
 
     environment {
-        PATH = "/opt/homebrew/bin:/usr/local/bin:${env.PATH}" // Add Minikube and Docker paths while preserving the existing PATH
+        // PATH = "/opt/homebrew/bin:/usr/local/bin:${env.PATH}" // Add Minikube and Docker paths while preserving the existing PATH
+         PATH = "C:\\Program Files\\Docker\\Docker\\resources\\bin;C:\\Program Files\\Kubernetes\\Minikube;${env.PATH}" // Add Minikube and Docker paths on Windows
     }
 
     stages {

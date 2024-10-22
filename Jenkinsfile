@@ -33,11 +33,13 @@ pipeline {
                         sh '''
                         echo "Starting Minikube on Unix..."
                         minikube start --driver=docker
+                        minikube start
                         '''
                     } else {
                         bat '''
                         echo "Starting Minikube on Windows or non-Unix..."
                         minikube start --driver=docker
+                        minikube start
                         '''
                     }
                 }

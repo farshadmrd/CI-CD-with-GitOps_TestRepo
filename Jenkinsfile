@@ -1,26 +1,26 @@
 pipeline {
     agent any
-
-
-    // tools {
-    //     // Install the Maven version configured in Jenkins
-    //     maven 'Maven 3.6.3'
-    //     // Install the JDK version configured in Jenkins
-    //     jdk 'JDK 17'
-
-    // }
-
-    // environment {
-    //     // Define environment variables
-    //     MAVEN_CLI_OPTS = '-B -DskipTests'
-    // }
-
     environment {
-        // PATH = "/opt/homebrew/bin:/usr/local/bin:${env.PATH}" // Add Minikube and Docker paths while preserving the existing PATH
-         PATH = "C:\\Program Files\\Docker\\Docker\\resources\\bin;C:\\Program Files\\Kubernetes\\Minikube;${env.PATH}" // Add Minikube and Docker paths on Windows
+        OS_TYPE = ''
     }
 
     stages {
+        stage('Determine OS') {
+            steps {
+                script {
+                    if (isUnix()) {
+                        OS_TYPE = 'UNIX'
+                        echo "Operating System: Unix-based"
+                    } else if (isWindows()) {
+                        OS_TYPE = 'WINDOWS'
+                        echo "Operating System: Windows"
+                    } else {
+                        error "OS not recognized. Failing the build."
+                    }
+                }
+            }
+        }
+
         stage('Checkout') {
             steps {
                 // Checkout code from version control
@@ -28,116 +28,28 @@ pipeline {
             }
         }
 
-
         stage('Start Minikube') {
             steps {
                 script {
-                     bat '''
-                    echo Starting Minikube...
-                    minikube start
-                    '''
+                    if (OS_TYPE == 'UNIX') {
+                        sh '''
+                        echo "Starting Minikube on Unix..."
+                        minikube start
+                        '''
+                    } else if (OS_TYPE == 'WINDOWS') {
+                        bat '''
+                        echo "Starting Minikube on Windows..."
+                        minikube start
+                        '''
+                    }
                 }
             }
         }
 
-    
-        // stage('Start Minikube') {
-        //     steps {
-        //         script {
-        //               // Ensure Docker is running and enabled
-        //             sh '''
-        //              sudo service docker start
-        //              sudo docker info
-        //             '''
-        //             // Start Minikube if it's not already running
-        //             sh '''
-        //             if ! minikube status | grep -q "host: Running"; then
-        //                 minikube start --driver=docker
-        //             else
-        //                 echo "Minikube is already running."
-        //             fi
-        //             '''
-        //         }
-        //     }
-        // }
-
-    //   stage('Build Docker Images in Minikube') {
-    //         steps {
-    //             script {
-    //                 // Get Docker environment variables from Minikube
-    //                 def dockerEnvCommand = 'minikube docker-env --shell bash'
-    //                 def dockerEnv = sh(script: dockerEnvCommand, returnStdout: true).trim()
-    //                 def envVars = []
-    //                 dockerEnv.eachLine { line ->
-    //                     if (line.startsWith('export')) {
-    //                         def keyValue = line.replace('export ', '').split('=')
-    //                         def key = keyValue[0]
-    //                         def value = keyValue[1].replaceAll('"', '')
-    //                         envVars.add("${key}=${value}")
-    //                     }
-    //                 }
-    //                 // Use Minikube's Docker daemon to build images
-    //                 withEnv(envVars) {
-    //                     sh 'docker-compose build'
-    //                 }
-    //             }
-    //         }
-
-        // stage('Checkout to test files') {
-        //     steps {
-        //         // Checkout code from version control
-        //         git url: 'https://github.com/farshadmrd/CI-CD-with-GitOps_SmokeTestsFiles', branch: 'main'
-        //     }
-        // }
-        
-
-        // stage('Run Python Script') {
-
-        //     steps {
-        //         // Ensure Python is available in the environment
-        //         sh 'python --version'
-                
-        //         // Run the Python script. Replace 'simpleTest.py' with the actual file name
-        //         sh 'python simpleTest.py'
-        //     }
-        // }
-
-
-
-
-
-        // stage('Package') {
-        //     steps {
-        //         dir('microservices/hello-world') {
-
-        //             // Run Maven package
-        //             sh 'mvn package'
-        //             echo 'Package created'
-        //             sh 'ls -l'
-        //             sh 'pwd'
-        //         }
-
-        //     }
-        // }
-       
-
-
-        //deploy on the server
-        // stage('Deploy') {
-        //     steps {
-        //         //deploy the application on the server
-        //     }
-        // }
+        // Other stages can also use OS_TYPE as needed without redundant checks
     }
+}
 
-    post {
-        success {
-            // Notify success
-            echo 'Build and Test Successful'
-        }
-        failure {
-            // Notify failure
-            echo 'Build or Test Failed'
-        }
-    }
+def isWindows() {
+    return env.NODE_NAME.toLowerCase().contains('windows')
 }

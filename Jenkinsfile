@@ -11,11 +11,9 @@ pipeline {
                     if (isUnix()) {
                         OS_TYPE = 'UNIX'
                         echo "Operating System: Unix-based"
-                    } else if (isWindows()) {
-                        OS_TYPE = 'WINDOWS'
-                        echo "Operating System: Windows"
                     } else {
-                        error "OS not recognized. Failing the build."
+                        OS_TYPE = 'WINDOWS'
+                        echo "Operating System: Windows or non-Unix"
                     }
                 }
             }
@@ -36,9 +34,9 @@ pipeline {
                         echo "Starting Minikube on Unix..."
                         minikube start
                         '''
-                    } else if (OS_TYPE == 'WINDOWS') {
+                    } else {
                         bat '''
-                        echo "Starting Minikube on Windows..."
+                        echo "Starting Minikube on Windows or non-Unix..."
                         minikube start
                         '''
                     }
@@ -48,8 +46,4 @@ pipeline {
 
         // Other stages can also use OS_TYPE as needed without redundant checks
     }
-}
-
-def isWindows() {
-    return env.NODE_NAME.toLowerCase().contains('windows')
 }

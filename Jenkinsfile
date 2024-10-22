@@ -32,8 +32,8 @@ pipeline {
         stage('Start Minikube') {
             steps {
                 script {
-                    sh '''
-                    echo "Starting Minikube..."
+                     bat '''
+                    echo Starting Minikube...
                     minikube start
                     '''
                 }

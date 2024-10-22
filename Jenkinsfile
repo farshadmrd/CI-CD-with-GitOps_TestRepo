@@ -32,12 +32,12 @@ pipeline {
                     if (OS_TYPE == 'UNIX') {
                         sh '''
                         echo "Starting Minikube on Unix..."
-                        minikube start
+                        minikube start --driver=docker
                         '''
                     } else {
                         bat '''
                         echo "Starting Minikube on Windows or non-Unix..."
-                        minikube start
+                        minikube start --driver=docker
                         '''
                     }
                 }

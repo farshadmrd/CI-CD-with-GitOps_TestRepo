@@ -1,31 +1,18 @@
 pipeline {
     agent any
     environment {
-        OS_TYPE = ''
+        DOCKER_HOST = 'tcp://127.0.0.1:2375'
+        DOCKER_TLS_VERIFY = '1'
+        DOCKER_CERT_PATH = '/path/to/certs'
     }
-
     stages {
-        stage('Determine OS') {
+        stage('Set Docker Context') {
             steps {
                 script {
-                    if (isUnix()) {
-                        OS_TYPE = 'UNIX'
-                        echo "Operating System: Unix-based"
-                    } else {
-                        OS_TYPE = 'WINDOWS'
-                        echo "Operating System: Windows or non-Unix"
-                    }
+                    sh 'docker context use default'
                 }
             }
         }
-
-        stage('Checkout') {
-            steps {
-                // Checkout code from version control
-                git url: 'https://github.com/farshadmrd/CI-CD-with-GitOps_TestRepo', branch: 'main'
-            }
-        }
-
         stage('Start Minikube') {
             steps {
                 script {
@@ -43,7 +30,5 @@ pipeline {
                 }
             }
         }
-
-        // Other stages can also use OS_TYPE as needed without redundant checks
     }
 }

@@ -1,98 +1,56 @@
 pipeline {
     agent any
-
-
-    tools {
-        // Install the Maven version configured in Jenkins
-        maven 'Maven 3.6.3'
-        // Install the JDK version configured in Jenkins
-        jdk 'JDK 17'
-
-    }
-
     environment {
-        // Define environment variables
-        MAVEN_CLI_OPTS = '-B -DskipTests'
+        OS_TYPE = ''
     }
 
     stages {
+        stage('Determine OS') {
+            steps {
+                script {
+                    if (isUnix()) {
+                        OS_TYPE = 'UNIX'
+                        echo "Operating System: Unix-based"
+                    } else {
+                        OS_TYPE = 'WINDOWS'
+                        echo "Operating System: Windows or non-Unix"
+                    }
+                }
+            }
+        }
+
         stage('Checkout') {
             steps {
                 // Checkout code from version control
-                git url: 'https://github.com/farshadmrd/jenkins_test.git', branch: 'main'
+                git url: 'https://github.com/farshadmrd/CI-CD-with-GitOps_TestRepo', branch: 'main'
             }
         }
 
-        stage('Build') {
+        stage('Check Minikube and Restart if Running') {
             steps {
-                dir('microservices/hello-world') {
-                    // Run Maven build
-                    sh 'mvn clean package $MAVEN_CLI_OPTS'
+                script {
+                    if (OS_TYPE == 'UNIX') {
+                        sh '''
+                        if minikube status > /dev/null 2>&1; then
+                            echo "Minikube is running. Deleting it..."
+                            minikube delete
+                        fi
+                        echo "Starting Minikube on Unix..."
+                        minikube start
+                        '''
+                    } else {
+                        bat '''
+                        minikube status >nul 2>&1
+                        if %ERRORLEVEL% EQU 0 (
+                            echo "Minikube is running. Deleting it..."
+                            minikube delete
+                        )
+                        echo "Starting Minikube on Windows or non-Unix..."
+                        minikube start
+                        '''
+                    }
                 }
             }
-        }
-
-        stage('Test') {
-            steps {
-                dir('microservices/hello-world') {
-                    // Run Maven tests
-                    sh 'chmod +x ./mvnw'
-                    sh './mvnw test'
-                }
-            }
-        }
-
-        stage('Checkout to test files') {
-            steps {
-                // Checkout code from version control
-                git url: 'https://github.com/farshadmrd/testFiles_Jenkins.git', branch: 'main'
-            }
-        }
-        
-
-        stage('Run Python Script') {
-
-            steps {
-                // Ensure Python is available in the environment
-                sh 'python --version'
-                
-                // Run the Python script. Replace 'simpleTest.py' with the actual file name
-                sh 'python simpleTest.py'
-            }
-        }
-        stage('Package') {
-            steps {
-                dir('microservices/hello-world') {
-
-                    // Run Maven package
-                    sh 'mvn package'
-                    echo 'Package created'
-                    sh 'ls -l'
-                    sh 'pwd'
-                }
-
-            }
-        }
-       
-
-
-        //deploy on mini kube
-        // stage('Deploy') {
-        //     steps {
-        //         // Run Maven deploy
-        //         sh 'mvn deploy'
-        //     }
-        // }
-    }
-
-    post {
-        success {
-            // Notify success
-            echo 'Build and Test Successful'
-        }
-        failure {
-            // Notify failure
-            echo 'Build or Test Failed'
         }
     }
 }

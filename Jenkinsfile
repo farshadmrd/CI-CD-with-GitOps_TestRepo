@@ -1,49 +1,98 @@
 pipeline {
     agent any
+
+
+    tools {
+        // Install the Maven version configured in Jenkins
+        maven 'Maven 3.6.3'
+        // Install the JDK version configured in Jenkins
+        jdk 'JDK 17'
+
+    }
+
     environment {
-        OS_TYPE = ''
+        // Define environment variables
+        MAVEN_CLI_OPTS = '-B -DskipTests'
     }
 
     stages {
-        stage('Determine OS') {
-            steps {
-                script {
-                    if (isUnix()) {
-                        OS_TYPE = 'UNIX'
-                        echo "Operating System: Unix-based"
-                    } else {
-                        OS_TYPE = 'WINDOWS'
-                        echo "Operating System: Windows or non-Unix"
-                    }
-                }
-            }
-        }
-
         stage('Checkout') {
             steps {
                 // Checkout code from version control
-                git url: 'https://github.com/farshadmrd/CI-CD-with-GitOps_TestRepo', branch: 'main'
+                git url: 'https://github.com/farshadmrd/jenkins_test.git', branch: 'main'
             }
         }
 
-        stage('Start Minikube') {
+        stage('Build') {
             steps {
-                script {
-                    if (OS_TYPE == 'UNIX') {
-                        sh '''
-                        echo "Starting Minikube on Unix..."
-                        minikube start --driver=docker
-                        '''
-                    } else {
-                        bat '''
-                        echo "Starting Minikube on Windows or non-Unix..."
-                        minikube start --driver=docker
-                        '''
-                    }
+                dir('microservices/hello-world') {
+                    // Run Maven build
+                    sh 'mvn clean package $MAVEN_CLI_OPTS'
                 }
             }
         }
 
-        // Other stages can also use OS_TYPE as needed without redundant checks
+        stage('Test') {
+            steps {
+                dir('microservices/hello-world') {
+                    // Run Maven tests
+                    sh 'chmod +x ./mvnw'
+                    sh './mvnw test'
+                }
+            }
+        }
+
+        stage('Checkout to test files') {
+            steps {
+                // Checkout code from version control
+                git url: 'https://github.com/farshadmrd/testFiles_Jenkins.git', branch: 'main'
+            }
+        }
+        
+
+        stage('Run Python Script') {
+
+            steps {
+                // Ensure Python is available in the environment
+                sh 'python --version'
+                
+                // Run the Python script. Replace 'simpleTest.py' with the actual file name
+                sh 'python simpleTest.py'
+            }
+        }
+        stage('Package') {
+            steps {
+                dir('microservices/hello-world') {
+
+                    // Run Maven package
+                    sh 'mvn package'
+                    echo 'Package created'
+                    sh 'ls -l'
+                    sh 'pwd'
+                }
+
+            }
+        }
+       
+
+
+        //deploy on mini kube
+        // stage('Deploy') {
+        //     steps {
+        //         // Run Maven deploy
+        //         sh 'mvn deploy'
+        //     }
+        // }
+    }
+
+    post {
+        success {
+            // Notify success
+            echo 'Build and Test Successful'
+        }
+        failure {
+            // Notify failure
+            echo 'Build or Test Failed'
+        }
     }
 }

@@ -18,6 +18,12 @@ Version | Data | Author(s)| Notes
 1.5 | 20/07/2024 | Farshad Moradi Shahrbabak | Object diagram (v2) |
 1.6 | 21/07/2024 | Farshad Moradi Shahrbabak | Dynamic Model (v2) |
 1.7 | 21/07/2024 | Farshad Moradi Shahrbabak | System Architecture (v2) |
+1.8 | 24/11/2024 | Farshad Moradi Shahrbabak | Technologies used(v2), System Overview(v2), modification to the overall document|
+1.9 | 22/12/2024 | Farshad Moradi Shahrbabak | Class diagram (v3)|
+2.0 | 25/12/2024 | Farshad Moradi Shahrbabak | Object diagram (v3)|
+
+
+
 
 
 
@@ -29,36 +35,36 @@ Version | Data | Author(s)| Notes
   - [Design Requirement Specification Document](#design-requirement-specification-document)
     - [REVISION HISTORY](#revision-history)
   - [Table of Content](#table-of-content)
-  - [  1 Introduction](#--1-introduction)
-    - [ 1.1 Purpose and Scope](#-11-purpose-and-scope)
-    - [ 1.2 Definitions](#-12-definitions)
-    - [ 1.3 Document Overview](#-13-document-overview)
-    - [ 1.4 Bibliography](#-14-bibliography)
-  - [ 2 Project Description](#-2-project-description)
-    - [ 2.1 Project Introduction](#-21-project-introduction)
-    - [ 2.2 Technologies used](#-22-technologies-used)
-    - [ 2.3 Assumption and Constraint](#-23-assumption-and-constraint)
-  - [  3 System Overview](#--3-system-overview)
-    - [  3.1 System Architecture](#--31-system-architecture)
-    - [  3.2 System Interfaces](#--32-system-interfaces)
-    - [  3.3 System Data](#--33-system-data)
-      - [  3.3.1 System Inputs](#--331-system-inputs)
-      - [  3.3.2 System Ouputs](#--332-system-ouputs)
-  - [  4 System Module 1](#--4-system-module-1)
-    - [  4.1 Structural Diagrams](#--41-structural-diagrams)
-      - [  4.1.1 Class diagram](#--411-class-diagram)
-        - [  4.1.1.1 Class Description](#--4111-class-description)
-      - [  4.1.2 Object diagram](#--412-object-diagram)
-      - [  4.2 Dynamic Models](#--42-dynamic-models)
+  - [1 Introduction](#1-introduction)
+    - [ 1.1 Purpose and Scope](#11-purpose-and-scope)
+    - [ 1.2 Definitions](#12-definitions)
+    - [ 1.3 Document Overview](#13-document-overview)
+    - [ 1.4 Bibliography](#14-bibliography)
+  - [ 2 Project Description](#2-project-description)
+    - [ 2.1 Project Introduction](#21-project-introduction)
+    - [ 2.2 Technologies used](#22-technologies-used)
+    - [ 2.3 Assumption and Constraint](#23-assumption-and-constraint)
+  - [  3 System Overview](#3-system-overview)
+    - [  3.1 System Architecture](#31-system-architecture)
+    - [  3.2 System Interfaces](#32-system-interfaces)
+    - [  3.3 System Data](#33-system-data)
+      - [  3.3.1 System Inputs](#331-system-inputs)
+      - [  3.3.2 System Ouputs](#332-system-ouputs)
+  - [4 CI/CD with GitOps](#4-ci/cd-with-gitops)
+    - [4.1 Structural Diagrams](#41-structural-diagrams)
+      - [4.1.1 Class diagram](#411-class-diagram)
+        - [4.1.1.1 Class Description](#4111-class-description)
+      - [4.1.2 Object diagram](#412-object-diagram)
+      - [4.2 Dynamic Models](#42-dynamic-models)
 
-## <a name="intro"></a>  1 Introduction
+## 1 Introduction
 
 <details>
     <summary> The aim of implementing CI/CD is to automate the process of integrating, testing, and deploying code changes, ensuring faster, more reliable, and more frequent software releases with high quality and minimal manual intervention.</summary>
    Continuous Integration (CI) and Continuous Deployment (CD) are key practices in modern software development that streamline the process of delivering code changes more frequently and reliably. Together, they form the CI/CD pipeline, which automates the steps between writing code and deploying it to production.
 </details>
 
-### <a name="purpose"></a> 1.1 Purpose and Scope
+### 1.1 Purpose and Scope
 
 <details>
     <summary> This document outlines the design specifications for implementing GitOps within our continuous integration and continuous deployment (CI/CD) pipeline </summary>
@@ -97,9 +103,9 @@ Monitoring and Logging:
 
 Set up monitoring and logging tools to track application performance, health, and logs.
 Ensure that logs and metrics are accessible and actionable, enabling rapid troubleshooting and performance optimization.
-Security and Compliance:
+<!-- Security and Compliance: -->
 
-Implement security best practices within the CI/CD pipeline, such as vulnerability scanning and compliance checks.
+<!-- Implement security best practices within the CI/CD pipeline, such as vulnerability scanning and compliance checks.
 Ensure that access controls and audit trails are in place for all GitOps processes.
 Rollback and Disaster Recovery:
 
@@ -108,7 +114,7 @@ Implement backup and recovery strategies for both application data and configura
 Documentation and Training:
 
 Provide comprehensive documentation for all CI/CD and GitOps processes.
-Conduct training sessions for team members to ensure they understand and can effectively use the CI/CD pipeline and GitOps workflows.
+Conduct training sessions for team members to ensure they understand and can effectively use the CI/CD pipeline and GitOps workflows. -->
 Scalability and Performance Optimization:
 
 Design the CI/CD pipeline and GitOps processes to handle increasing workloads and scaling requirements.
@@ -117,7 +123,7 @@ Optimize performance of the CI/CD pipeline to ensure fast and efficient builds, 
 </p>
 </details>
 
-### <a name="def"></a> 1.2 Definitions
+### 1.2 Definitions
 
 <details>
     <summary> Put a summary of the section </summary>
@@ -130,7 +136,7 @@ Optimize performance of the CI/CD pipeline to ensure fast and efficient builds, 
 
 </details>
 
-### <a name="overview"></a> 1.3 Document Overview
+### 1.3 Document Overview
 
 <details>
     <summary> Explain how is organized the document
@@ -138,7 +144,7 @@ Optimize performance of the CI/CD pipeline to ensure fast and efficient builds, 
     <p>This sub section should describe ...</p>
 </details>
 
-### <a name="biblio"></a> 1.4 Bibliography
+### 1.4 Bibliography
 
 <details>
     <summary>This section includes references to all sources of information that already is available for us</summary>
@@ -154,9 +160,9 @@ Website:
 
 </details>
 
-## <a name="description"></a> 2 Project Description
+##  2 Project Description
 
-### <a name="project-intro"></a> 2.1 Project Introduction
+###  2.1 Project Introduction
 
 <details>
     <summary> The primary objective of the GitOps project and propose a potential solution at a high level.
@@ -172,40 +178,84 @@ application before installing in the production environment<br>
 custome</p>
 </details>
 
-### <a name="tech"></a> 2.2 Technologies used
+### 2.2 Technologies used
 
 <details>
 <summary> Description of the overall architecture. </summary>
 
-![DevOpsTools](imgs/DevOpsTools.png "DevOpsTools")
+<!-- ![DevOpsTools](imgs/DevOpsTools.png "DevOpsTools") -->
 | name          | Description |
 | ------------- | ------------- |
-| IDE          | An Integrated Development Environment (IDE) is a software application that provides comprehensive facilities to programmers for software development, including a code editor, debugger, and build automation tools.     |
 | Github        | GitHub is a web-based platform for version control and collaborative software development, allowing users to host and review code, manage projects, and build software alongside millions of developers worldwide.  |
 | Jenkins   | Jenkins is an open-source automation server used for continuous integration and continuous delivery (CI/CD) to build, test, and deploy software projects efficiently. |
+| Java(Spring Framework)  | Java's Spring Framework is a powerful, lightweight framework for building enterprise-level applications, offering features like dependency injection, aspect-oriented programming, and seamless integration with various technologies|
 | Docker  | Docker is an open-source platform that automates the deployment and management of applications within lightweight, portable containers, ensuring consistent environments across different stages of development and production.|
-| Mini Kube   | Minikube is a tool that enables running a single-node Kubernetes cluster locally on your machine, making it easy to develop and test Kubernetes applications. |
+| MiniKube   | Minikube is a tool that enables running a single-node Kubernetes cluster locally on your machine, making it easy to develop and test Kubernetes applications. |
+| Python  | Python is a versatile, high-level programming language known for its simplicity, readability, and wide range of libraries, making it ideal for tasks ranging from web development  |
 
 
-# Author
+### Github
+GitHub is a popular platform that enables developers to manage, track, and collaborate on their projects. Using GitHub, developers can commit and push Java or Python files to different repositories to save their changes and maintain version control
 
-Developers write and edit code using IDEs like Visual Studio Code. These tools provide a rich environment for coding, debugging, and testing at the individual level.
+### Jenkins
+After developers push their code to a GitHub repository, webhooks can be configured to trigger automated processes. In this setup, GitHub sends a notification to Jenkins through a webhook whenever a push event occurs. This webhook integration allows Jenkins to automatically start a build or deployment pipeline, ensuring continuous integration and delivery (CI/CD).
+By using this approach, the workflow becomes more efficient and less prone to delays, as developers do not need to manually trigger Jenkins jobs. Instead, Jenkins listens for the webhook, retrieves the latest code changes, and executes predefined tasks such as testing, building, or deploying the application. This automation streamlines the development process and helps maintain a robust and consistent project pipeline.
 
-# Source
 
-The code is committed to a source control system like GitHub. This step involves managing different versions of the code, collaborating with other developers, and ensuring changes are tracked and documented.
+### Java(Spring Framework)
+Using the Java programming language and the Spring Framework, we can create a microservices architecture with four essential components:
 
-# Build
+Service Registry: Built with Spring Cloud Netflix Eureka, the Service Registry enables dynamic discovery of microservices, allowing them to register themselves and communicate seamlessly without hardcoded endpoints.
 
-The committed code is then compiled and built into executable artifacts. This stage involves continuous integration (CI), where tools like Jenkins and AWS CodeBuild automate the process of compiling code, running unit tests, and packaging the software for deployment.
+Config Server: Utilizing Spring Cloud Config, the Config Server centralizes configuration management, providing a single source of truth for application settings across all microservices, ensuring consistency and reducing duplication.
 
-# Test
+API Gateway: Implemented using Spring Cloud Gateway, the API Gateway acts as a unified entry point to the system, handling tasks such as routing, load balancing, and authentication for requests across microservices.
 
-After building the software, it undergoes various testing phases to ensure it is free from bugs and performs well. Testing tools like JUnit, pytest, Apache JMeter, and Locust are used for different types of tests, including unit tests, integration tests, load tests, and penetration tests.
+Hello World Microservice: A simple microservice created with Spring Boot to demonstrate the architecture, this service handles a basic "Hello World" response, showcasing the ease of deploying and scaling functionality within the framework.
 
-# Deploy 
+Together, these microservices demonstrate how the Spring Framework simplifies the creation of scalable, maintainable, and efficient distributed systems.
 
-Finally, the tested and validated software is deployed to production environments. AWS CodeDeploy automates this process, ensuring the software is deployed consistently and reliably across different environments, minimizing the risk of deployment failures.
+### Docker
+To streamline the deployment of the microservices, Docker can be used to containerize each component. Docker allows us to package the microservices (Service Registry, Config Server, API Gateway, and Hello World Microservice) along with their dependencies and runtime environment into lightweight containers. Here's how Docker is utilized:
+
+Dockerizing Microservices:
+Each microservice is equipped with a Dockerfile that specifies the base image (e.g., OpenJDK for Java), dependencies, and the commands to build and run the microservice.
+These Dockerfiles ensure that the microservices can run consistently across any environment, eliminating issues caused by differences in configurations or operating systems.
+
+Building Images:
+The docker build command is used to create Docker images for each microservice from their respective Dockerfile.
+These images encapsulate the application's code, libraries, and configurations.
+
+Running Containers:
+Each Docker image is deployed as a container using the docker run command, ensuring isolated environments for each microservice.
+Containers can be linked to enable communication between the microservices, such as the API Gateway accessing the Hello World Microservice.
+
+Orchestrating with Docker Compose:
+A docker-compose.yml file can be created to define and manage all the microservices. This file specifies how containers should be networked, their environment variables, and any dependencies.
+
+Running docker-compose up will start all the microservices together, simplifying deployment and ensuring they interact seamlessly.
+By using Docker, we achieve a portable, consistent, and scalable deployment process for the microservices, making it easier to develop, test, and deploy the system across different environments.
+
+### Minikube
+Minikube is a lightweight Kubernetes implementation that runs on a local machine, making it an excellent environment for testing and deploying microservices during development. By using Minikube, the microservices can be deployed and tested in a controlled Kubernetes environment directly on a local machine. This approach ensures the services are production-ready and simplifies troubleshooting before moving to a larger-scale deployment.
+
+### Python
+To ensure the microservices are correctly deployed and running in the Minikube environment, we can use Python to write a simple test script. This script verifies that each microservice is operational by sending HTTP requests to their endpoints and checking the responses. Here's how Python can be utilized:
+
+Setup:
+The test script uses libraries like requests to send HTTP requests and unittest or pytest for structuring and executing the tests.
+
+Testing Endpoints:
+The script sends HTTP requests to the endpoints exposed by the microservices (e.g., the API Gateway or Hello World Microservice) running in the Minikube environment.
+It checks for expected responses, such as "Hello World" from the Hello World Microservice or a status code of 200 OK from the API Gateway.
+
+Environment Validation:
+The script ensures that the Service Registry and Config Server are reachable and functioning correctly. It validates that the microservices are registered in the Service Registry and can communicate as expected.
+
+Automated Execution:
+The test script can be integrated into the CI/CD pipeline, automatically running after deployment in Minikube to confirm the system's health. It can output detailed logs indicating which services passed or failed the tests, aiding in debugging if issues arise.
+
+
 
 
 
@@ -224,10 +274,10 @@ Finally, the tested and validated software is deployed to production environment
     </p>
 </details>
 
-## <a name="system-overview"></a>  3 System Overview
+## 3 System Overview
 
 <details>
-    <summary> Users should be able to build, test, and deploy their code by simply pushing it to the repository as an input. Here we show the use case diagram and some of the scenarios that must be implemented. Warning this is an example and may not be complete.
+    <summary> Users should be able to build, test, and deploy their code by simply pushing it to the repository as an input. Here we show the use case diagram and some of the scenarios that must be implemented.
     </summary>
 
 ![Use Case Diagram](imgs/GitOps.png "Use Case Diagram")
@@ -238,7 +288,7 @@ Finally, the tested and validated software is deployed to production environment
 | Actors        | Generic User  |
 | Entry Point   | (1) .Java files  |
 | Exit  Point   | (4) File to be deployed|
-| Event Flow    | (1) User invoke the system by pushing the program. <br> (2) buildimage is triggered. This job is responsible for building a Docker container image from the code in the kubernetecode repository. <br> (3) Another CI job called updatemanifest is triggered. This job updates the deployment.yaml file in a separate GitHub repository named kubernetesmanifest. <br> (4) The updated deployment.yaml file is automatically picked up by Argo CD, a GitOps too |
+| Event Flow    | (1) User invoke the system by pushing the program. <br> (2) buildimage is triggered. This job is responsible for building a Docker container image from the code in the kubernetecode repository. <br> (3) Another CI job called updatemanifest is triggered. This job updates the deployment.yaml file in a separate GitHub repository named kubernetesmanifest. <br> (4) The updated deployment.yaml file is automatically picked up |
 
 
 
@@ -248,56 +298,42 @@ Finally, the tested and validated software is deployed to production environment
 # GitOps Flow
 GitOps is a methodology that uses Git as a single source of truth for declarative infrastructure and applications. It leverages Git repositories as the source of truth for the desired state of the system, automating deployment and operations tasks. Here's a detailed breakdown of the GitOps flow illustrated in the image:
 
-1. Code Commit
-Developer writes code and commits to the repository. A developer writes or updates code in a file named app.py within a repository named kubernetescode on GitHub. The commit to GitHub triggers the CI/CD pipeline to start the build process.
+1-Code Commit
+Developer writes code and commits to the repository. A developer writes or updates code  within a repository on GitHub. The commit to GitHub triggers the CI/CD pipeline to start the build process.
 
-2. Build Docker Image
-Jenkins (or another CI tool) builds a Docker container image.
-
+2-Build Docker Image:
 Job - buildimage: This job is responsible for building the Docker container image from the committed code.
-Docker Hub: The built Docker image is then pushed to Docker Hub (a cloud-based repository service for Docker images).
 The Docker image is tagged with a version, for example, test:10.
 
-3. Update Kubernetes Manifest(Update deployment configuration)
 
-Job - updatemanifest: This job updates the deployment configuration file, typically named deployment.yaml, in another repository called kubernetesmanifest.
-The deployment.yaml file is modified to reference the new Docker image tag (test:10), ensuring that the Kubernetes deployment uses the latest version of the container image.
+3-Deploy to Kubernetes Cluster : If all tests pass successfully in the test environment (Kubernetes environment), deploy the application to the production environment using the Greenfield approach. This ensures the application is installed on a clean setup without any previous versions running.
 
-4. Deploy to Kubernetes Cluster(Argo CD deploys the updated configuration)
 
-Argo CD: An open-source GitOps continuous delivery tool for Kubernetes. It monitors the Git repository for changes in the deployment configuration.
-When Argo CD detects the updated deployment.yaml, it synchronizes the changes with the Kubernetes cluster.
-The Kubernetes cluster then pulls the specified Docker image (test:10) from Docker Hub and deploys it, ensuring that the running application matches the desired state defined in the Git repository.
 
 
 # Detailed Steps in the Flow
 Step-by-Step Explanation:
-Code Commit by Developer:
 
-A developer makes changes to the application code (app.py) and commits these changes to the GitHub repository (kubernetescode).
+1-Code Commit by Developer:
+A developer makes changes to the application code and commits these changes to the GitHub repository.
 GitHub triggers a webhook to initiate the CI/CD pipeline.
-Build Docker Image:
 
-Jenkins (or another CI/CD tool) detects the new commit and runs the buildimage job.
-This job includes steps to:
-Checkout the code from GitHub.
-Build a Docker image using the Dockerfile included in the repository.
-Tag the Docker image with a version number, such as test:10.
-Push the Docker image to Docker Hub.
-Update Kubernetes Manifest:
+2-Clone the Repository
+The pipeline starts by downloading the project’s code from a GitHub repository. This ensures that the pipeline works with the most up-to-date version of the code.
 
-Jenkins then runs the updatemanifest job.
-This job includes steps to:
-Checkout the kubernetesmanifest repository.
-Update the deployment.yaml file to use the new Docker image tag (test:10).
-Commit the updated deployment.yaml file back to the GitHub repository (kubernetesmanifest).
-Deploy to Kubernetes Cluster:
+3-Start Minikube
+This step ensures that Minikube, a tool for running Kubernetes locally, is clean and ready to use. It stops and deletes any existing Minikube environment and then starts a fresh instance. Minikube's settings are configured so that Docker commands in the pipeline build images directly inside Minikube’s environment.
 
-Argo CD continuously monitors the kubernetesmanifest repository for changes.
-Upon detecting the updated deployment.yaml, Argo CD performs the following actions:
-Synchronizes the Kubernetes cluster with the new desired state defined in deployment.yaml.
-Kubernetes pulls the new Docker image (test:10) from Docker Hub.
-The updated Docker image is deployed to the Kubernetes cluster, ensuring that the running application is up-to-date.
+4-Build Docker Images
+The pipeline rebuilds all Docker images for the project, ensuring the latest version of the application and its dependencies are ready for deployment.
+
+5-Deploy Services to Minikube
+The application and its services are deployed to the Minikube environment using Kubernetes configuration files.
+
+6-Run Smoke Tests
+A separate automated test pipeline is triggered to verify that the deployed application is functioning correctly.
+
+
 
 # Components and Their Roles
 
@@ -312,26 +348,19 @@ Jenkins:
 Automates the build and update processes.
 Builds Docker images and updates Kubernetes manifests.
 
-Docker Hub:
-Serves as a registry for Docker images.
-Stores the built Docker images with specific tags.
-
-Argo CD:
-Automates the deployment process in Kubernetes.
-Ensures the Kubernetes cluster matches the desired state defined in GitHub repositories.
 
 Kubernetes Cluster:
 Runs the deployed application.
 Continuously maintains the desired state defined in the deployment configurations.
 
 # Summary
-This GitOps flow ensures that the entire process from code commit to deployment is automated and traceable via Git repositories. By using tools like Jenkins, Docker Hub, and Argo CD, the flow ensures consistent, reliable, and auditable deployments to Kubernetes clusters. This approach enhances collaboration, improves deployment speed, and maintains system stability.
+This GitOps flow ensures that the entire process from code commit to deployment is automated and traceable via Git repositories. By using tools like Jenkins and Docker the flow ensures consistent, reliable, and auditable deployments to Kubernetes clusters. This approach enhances collaboration, improves deployment speed, and maintains system stability.
 
 
 
 </details>
 
-### <a name="architecture"></a>  3.1 System Architecture
+### 3.1 System Architecture
 
 <details>
     <summary> GitOps Architecture</summary>
@@ -447,7 +476,7 @@ This GitOps architecture enhances collaboration, improves deployment speed, and 
 
 </details>
 
-### <a name="interfaces"></a>  3.2 System Interfaces
+### 3.2 System Interfaces
 
 <details>
     <summary> Interfaces that exist in GitOps management include Git repositories for version control, CI/CD tools like Jenkins for automation, Docker for containerization, and Kubernetes for orchestration. These interfaces work together to automate and streamline the deployment and management of applications and infrastructure.
@@ -495,7 +524,6 @@ Pulling Images: Kubernetes clusters pull images from the registry based on the t
 4. GitOps Operator Interface
 Purpose: Monitors the Git repository for changes and synchronizes the desired state with the Kubernetes cluster.
 Components:
-Argo CD: Popular GitOps operator that manage deployments.
 Synchronization Mechanism: Watches the Git repository and applies changes to the cluster.
 Functions:
 Syncing: Detects changes in the Git repository and updates the Kubernetes cluster to match the desired state.
@@ -558,7 +586,7 @@ Collaboration: Facilitates collaboration among teams through Git workflows, pull
 This comprehensive explanation outlines the critical interfaces in GitOps management, detailing their roles, components, and interactions within the GitOps workflow, ensuring a robust, secure, and efficient deployment process.
 </details>
 
-### <a name="data"></a>  3.3 System Data
+### 3.3 System Data
 
 <details>
     <summary> In this section we describe the inputs and outputs as well as their format.
@@ -566,7 +594,7 @@ This comprehensive explanation outlines the critical interfaces in GitOps manage
     <p>By clearly defining the inputs and outputs at each stage of the GitOps CI/CD process, the workflow ensures a streamlined and automated approach to building, testing, and deploying applications. This results in consistent, reliable, and efficient software delivery.</p>
 </details>
 
-#### <a name="inputs"></a>  3.3.1 System Inputs
+#### 3.3.1 System Inputs
 
 <details>
     <summary> System Inputs</summary>
@@ -606,7 +634,7 @@ Tools: Docker, Docker Hub
 ### Deployment
 Input: Configuration Files, Docker Images
 Process: The deployment stage reads the deployment configuration files (e.g., k8s-deployment.yaml) and uses them to deploy the application containers to the target environment.
-Tools: Kubernetes, Argo CD
+Tools: Kubernetes
 
 ### Monitoring and Logging
 Input: Metrics and Logging Configurations
@@ -614,7 +642,7 @@ Process: Monitoring and logging tools collect and process logs and metrics durin
 Tools:minikube
 </details>
 
-#### <a name="outputs"></a>  3.3.2 System Ouputs
+#### 3.3.2 System Ouputs
 
 <details>
     <summary> System Ouputs</summary>
@@ -668,14 +696,14 @@ Purpose: Keep stakeholders informed about the build, test, and deployment status
 
 </details>
 
-## <a name="sys-module-1"></a>  4 CI/CD with GitOps
+## 4 CI/CD with GitOps
 
 <details>
     <summary>Here we describe the structure of the system.</summary>
     <p>First we describe the Static structure of the system, such as the Class/Object Diagram, and then we describe the dynamic behavior of the system.</p>
 </details>
 
-### <a name="sd"></a>  4.1 Structural Diagrams
+### 4.1 Structural Diagrams
 
 <details>
     <summary> Here we describe two different types of view of the system, class, and Object Diagram
@@ -683,219 +711,317 @@ Purpose: Keep stakeholders informed about the build, test, and deployment status
     <p></p>
 </details>
 
-#### <a name="cd"></a>  4.1.1 Class diagram
+#### 4.1.1 Class diagram
 
 <details>
     <summary> class diagram with the types of attributes and methods included for a CI/CD system integrated with GitOps
     </summary>
 
-![Use Case Diagram](imgs/classDiagram.png "Use Case Diagram")
+![Use Case Diagram](imgs/classDiagram.jpeg "Use Case Diagram")
 
 </details>
 
-##### <a name="cd-description"></a>  4.1.1.1 Class Description
+##### 4.1.1.1 Class Description
 
 <details>
     <summary>Class Description</summary>
 
+This class diagram defines a comprehensive CI/CD pipeline and microservices ecosystem, emphasizing automation, configuration management, and scalability.
 
-1. Developer (Application)
+### Components and Classes
+##### 1. Developer
+Represents the user or engineer responsible for pushing changes (code or tests) to the system.
 Attributes:
-name: String: Represents the name of the developer.
-id: String: Unique identifier for the developer.
+name: String: The name of the developer.
+id: String: A unique identifier for the developer.
 Relationships:
-Pushes code: The developer interacts with the Git Repository (Application) by pushing code to it. This is indicated by a solid line with a filled arrowhead pointing from the Developer to the Git Repository.
-2. Git Repository (Application)
+The Developer pushes changes to the Git Repository (application or test).
+
+##### 2. Git Repository
+Represents the version control system where code and test files are stored.
+Application Repository:
+Stores application source code.
 Attributes:
-repositoryName: String: The name of the repository.
-repositoryUrl: String: The URL where the repository is hosted.
-branches: List: A list of branches in the repository.
+repositoryName: String: Name of the repository (e.g., app-repo).
+repositoryUrl: String: URL for accessing the repository.
+branches: List: A list of branches (e.g., main, feature-branch).
 Methods:
-commitCode(message: String): void: Allows the developer to commit code with a specific message.
-createBranch(branchName: String): void: Allows the creation of a new branch in the repository.
-Relationships:
-Pushes to Webhook: When code is committed, a webhook is triggered, initiating further actions in the pipeline. This is represented by an association line with a filled arrowhead.
-3. Webhook
+commitCode(message: String): void: Commits code to the repository with a commit message.
+createBranch(branchName: String): void: Creates a new branch.
+Test Repository:
+Stores test files and scripts.
+Attributes and methods are similar to the application repository.
+
+##### 3. Webhook
+Acts as a listener for events in the Git Repository, such as push or commit.
 Attributes:
-url: String: The URL endpoint for the webhook.
-events: List: A list of events that the webhook is configured to listen for.
+url: String: The endpoint that receives the event notification.
+events: List: The list of events that trigger the webhook (e.g., push, commit).
 Relationships:
-Triggers Build Server: When the webhook is activated, it triggers the build server to start its processes. This is depicted by an association line with a filled arrowhead.
-4. Build Server
+The Webhook notifies Jenkins to initiate the pipeline when a relevant event occurs in the repository.
+
+##### 4. Jenkins
+A CI/CD server that automates testing, building, and deployment of code.
 Attributes:
-jobs: List: A list of jobs or tasks that the build server is responsible for executing.
-status: String: The current status of the build server.
-Relationships:
-Pushes Docker Image: The build server creates and pushes Docker images to the Docker repository. This is represented by an association line with a filled arrowhead pointing to the Docker Image class.
-5. Docker Image
-Attributes:
-name: String: The name of the Docker image.
-version: String: The version of the Docker image.
-tags: List: A list of tags associated with the Docker image.
-Relationships:
-Pushed to Docker Repository: Once created, Docker images are pushed to the Docker Repository. This is indicated by an association line with a filled arrowhead.
-6. Docker Repository
-Attributes:
-name: String: The name of the Docker repository.
-images: List: A list of Docker images stored in the repository.
-stages: List: Various stages involved in handling Docker images.
-Relationships:
-Deploys to Minikube: Docker images are deployed from the Docker repository to Minikube for further testing and deployment. This is depicted by an association line with a filled arrowhead pointing to Minikube.
-7. Pipeline
-Attributes:
-pipelineId: String: The unique identifier for the pipeline.
-pipelineName: String: The name of the pipeline.
-stages: Different stages in the pipeline.
+buildQueue: List<job>: A queue of build jobs waiting to execute.
+installedPlugins: List<Plugin>: A list of plugins installed in Jenkins (e.g., Git, Docker).
 Methods:
-triggerPipeline(): void: Method to trigger the pipeline.
-getStatus(): void: Method to get the current status of the pipeline.
+triggerBuild(jobName: String): Build: Triggers a build for a specified job.
+addWebhook(url: String): void: Configures a webhook in Jenkins.
+triggerTest(jobName: String): TestResult: Executes tests as part of a pipeline.
+analyzeTestResults(jobName: String): String: Analyzes the results of executed tests.
+storeTestArtifacts(jobName: String): void: Stores the artifacts generated during a build or test.
 Relationships:
-Triggers Minikube: The pipeline triggers Minikube to test and deploy applications. This is shown by an association line with a filled arrowhead.
-8. Minikube
+Jenkins interacts with the MinikubeCluster to deploy services to different environments.
+
+##### 5. MinikubeCluster
+Represents a Kubernetes-based cluster used for deploying and managing services.
 Attributes:
-version: String: The version of Minikube being used.
-status: String: The current status of Minikube.
+nodes: List<Node>: The nodes that make up the cluster.
+services: List<Service>: The services running in the cluster.
 Methods:
-testApplication(): void: Method to test applications within Minikube.
+deployServices(serviceManifest: Manifest): void: Deploys services using a Kubernetes manifest file.
+monitorPods(): List<PodStatus>: Monitors the status of pods running in the cluster.
+Instances:
+Staging Cluster: Used for testing and validating deployments.
+Production Cluster: Used for deploying production-ready services.
+
+##### 6. ConfigServer
+Provides dynamic configurations to microservices running in the cluster.
+Attributes:
+port: int: The port on which the server runs.
+url: String: The URL for accessing the configuration server.
+Methods:
+loadConfiguration(): Supplies configuration settings to services in real-time.
 Relationships:
-Deploys to Live Server: Minikube, after testing, deploys the application to the live server for production use. This is represented by an association line with a filled arrowhead.
-9. Live Server
+ConfigServer integrates with MinikubeCluster and provides configurations to other components like HelloWorldService.
+
+##### 7. EurekaServer
+A service discovery server that allows microservices to register and discover each other.
 Attributes:
-serverId: String: Unique identifier for the live server.
-name: The name of the live server.
-ipAddress: The IP address of the live server.
-port: The port number on which the live server is running.
+port: int: The port on which the server runs.
 Methods:
-start(): void: Starts the live server.
-stop(): void: Stops the live server.
-restart(): void: Restarts the live server.
-getStatus(): void: Gets the current status of the live server.
-10. Developer (Test)
-Attributes:
-name: String: Represents the name of the test developer.
-id: String: Unique identifier for the test developer.
+registerService(instance: ServiceInstance): void: Registers a new service instance with Eureka.
+discoverService(serviceName: String): List<ServiceInstance>: Retrieves all registered instances of a specific service.
 Relationships:
-Pushes code: Similar to the application developer, the test developer pushes code to the Git Repository (Test). This is indicated by a solid line with a filled arrowhead.
-11. Git Repository (Test)
+EurekaServer is hosted in the MinikubeCluster and provides service discovery capabilities to microservices like HelloWorldService and APIGateway.
+##### 8. APIGateway
+Serves as the entry point for client requests and routes them to the appropriate microservices.
 Attributes:
-repositoryName: String: The name of the repository.
-repositoryUrl: String: The URL where the repository is hosted.
-branches: List: A list of branches in the repository.
+port: int: The port used for routing requests.
 Methods:
-commitCode(message: String): void: Allows the test developer to commit code with a specific message.
-createBranch(branchName: String): void: Allows the creation of a new branch in the repository.
+forwardRequest(request: Request): Response: Routes client requests to backend services.
+healthCheck(): boolean: Performs health checks to ensure services are functional.
+Relationships:
+The API Gateway interacts with the HelloWorldService and uses EurekaServer for service discovery.
+##### 9. HelloWorldService
+Represents a microservice hosted in the cluster.
+Attributes:
+port: int: The port on which the service runs.
+status: String: The status of the service (e.g., active, inactive).
+Methods:
+processRequest(input: String): String: Handles client requests and returns a response.
+Relationships:
+HelloWorldService registers itself with EurekaServer and receives configurations from ConfigServer.
 
 
-### Notations 
-Association: Regular connection (red arrow) showing a general relationship between classes.
-Inheritance: Represents inheritance (black arrow) indicating a class is derived from another class.
-Realize/Implementation: Dashed line with an open arrowhead, showing an interface implementation.
-Dependency: Dashed line with an open arrowhead, showing that a class depends on another class.
-Aggregation: Represents a whole-part relationship (green diamond) where the part can exist independently of the whole.
-Composition: Strong ownership (blue diamond) where the part cannot exist independently of the whole.
+### Process Explanation
 
-### Summary
-The diagram represents the flow of code from developers through a CI/CD pipeline, involving steps like code commits, triggering webhooks, building on a build server, creating and pushing Docker images, deploying to a test environment (Minikube), and finally to a live production server. The relationships and methods indicate how each component interacts with the others to automate and streamline the development and deployment process.
+#### Stage 1: Build/Deployment to MinikubeCluster(Testing environment):
+
+1. The developer pushes new code to the Git repository.
+The repository detects the push event and triggers the webhook.(It doesn't make a difference which developer (application developer or test script developer) pushes code into either repository (application or test); the pipeline will trigger regardless)
+
+2. The webhook sends a request to its configured URL with details about the event (e.g., the updated branch or commit).
+
+3. The webhook triggers the Jenkins pipeline, initiating processes such as code testing, building, or deployment.
+
+4. Jenkins deploys services to the staging MinikubeCluster by utilizing the deployServices() method.
+The services are monitored using monitorPods().
+
+5. Registration:
+The ConfigServer provides necessary configurations to services deployed in Minikube.
+Services (e.g., HelloWorldService) register with the EurekaServer for discovery.
+
+
+#### Stage 2: Trigger Smoke Testing
+
+6. Jenkins receives the webhook notification and identifies the appropriate pipeline job to run.
+The Jenkinsfile from the repository is retrieved (if required), and the pipeline for smoke testing is triggered. The smoke test job is responsible for validating the basic functionality of the application or services to ensure the code changes (test scripts) do not break core features.
+
+
+
+#### Stage 3: Deployment to MinikubeCluster (Production):
+
+7. After successful testing and verification, Jenkins triggers deployment to the production MinikubeCluster.
+Configuration and service registration processes repeat for the production environment.
+
+8. Request Routing:
+The API Gateway routes incoming client requests to the appropriate service, such as HelloWorldService.
+EurekaServer assists in service discovery during this process.
+
+
+
+
+
+
 
 </details>
 
-#### <a name="od"></a>  4.1.2 Object diagram
+#### 4.1.2 Object diagram
 
 <details>
     <summary> snapshot of the system at a particular point in time, showing the instances of classes (objects) and their relationships. While class diagrams show the static structure of the system, object diagrams illustrate the actual data and its interactions during runtime.
     </summary>
 
-![Use Case Diagram](imgs/ObjectDiagram.png "Use Case Diagram")
+![Use Case Diagram](imgs/ObjectDiagram.jpeg "Use Case Diagram")
 
 
 
-1. Developer (Application)
-Instance:
-name: "Alice"
-id: "dev01"
-This instance represents a developer named Alice with an ID of "dev01".
+##### 1. Developer
+Represents the individuals who push code or test scripts to their respective repositories.
+Attributes:
+name: String: The name of the developer.
+id: String: A unique identifier for the developer.
+Objects:
+Developer for application: Alice (dev001).
+Developer for test scripts: Bob (test001).
+Relationships:
+Developers push code or test scripts to Git Repositories.
 
-2. Git Repository (Application)
-Instance:
-repositoryName: "AppRepo"
-repositoryUrl: "http://gitrepo.com/apprepo"
-branches: ["main", "dev"]
-This instance represents a Git repository for the application with the name "AppRepo", located at the specified URL, and containing branches "main" and "dev".
+##### 2. Git Repository
+Represents repositories used to store application code and test scripts.
+Application Repository:
+Attributes:
+repositoryName: String: The name of the repository (e.g., sales-app).
+repositoryUrl: String: The URL for accessing the repository.
+branches: List: The branches in the repository (e.g., main, jenkins-setup).
+Methods:
+commitCode(message: String): Allows developers to commit changes to the repository.
+createBranch(branchName: String): Creates a new branch in the repository.
+Test Repository:
+Stores the test scripts used during the CI/CD pipeline.
+Attributes and methods are similar to the application repository.
+Objects:
+Git Repository (Application):
+Name: se24-p08.
+URL: https://github.com/mnarizzano/se24-p08.
+Branches: [main, feature, jenkins-setup].
+Git Repository (Test):
+Name: CI-CD-With-GitOps_SmokeTestsFiles.
+URL: https://github.com/mainrepo/smoke-tests.git.
+Branches: [main].
 
-3. Webhook
-Instance:
-url: "http://webhook.com"
-events: ["push", "pull_request"]
-This represents a webhook configured to listen to "push" and "pull_request" events at the specified URL.
+##### 3. Webhook
+Listens for events (e.g., push) in the repositories and triggers the pipeline in Jenkins.
+Attributes:
+url: String: The endpoint URL for the webhook.
+events: List: The list of events that the webhook listens for (e.g., push).
+Object:
+URL: http://localhost:7777/jenkins-webhook.
+Events: [push].
 
-4. Build Server
-Instance:
-jobs: ["buildJob1", "buildJob2"]
-status: "running"
-This represents a build server running two jobs, "buildJob1" and "buildJob2", with its status being "running".
+##### 4. Jenkins
+Represents the CI/CD server responsible for automating the pipeline, including testing and deployment.
+Attributes:
+buildQueue: List<job>: A list of jobs queued for execution.
+installedPlugins: List<Plugin>: Plugins installed in Jenkins (e.g., GitPlugin, DockerPlugin).
+Methods:
+triggerBuild(jobName: String): Triggers a build for the given job.
+addWebhook(url: String): Configures a webhook for Jenkins.
+triggerTest(jobName: String): Executes test jobs in Jenkins.
+analyzeTestResults(jobName: String): Analyzes the results of the tests.
+storeTestArtifacts(jobName: String): Stores artifacts generated during the build or test.
+Objects:
+Build Jobs:
+deploy-smoke-test-job.
+staging-deployment-job.
+Relationships:
+Jenkins integrates with MinikubeCluster to deploy services to staging and production environments.
 
-5. Docker Image
-Instance:
-name: "AppImage"
-version: "1.0"
-tags: ["latest", "stable"]
-This represents a Docker image named "AppImage" with version "1.0" and tagged as "latest" and "stable".
+##### 5. MinikubeCluster
+Represents Kubernetes clusters used for deploying and managing services.
+Attributes:
+nodes: List<Node>: A list of nodes in the cluster.
+services: List<Service>: Services running in the cluster.
+Methods:
+deployServices(serviceManifest: Manifest): Deploys services to the cluster using a Kubernetes manifest.
+monitorPods(): List<PodStatus>: Monitors the status of the pods in the cluster.
+Objects:
+Staging Cluster:
+Nodes: [Node1, Node2].
+Services: ConfigServerInstance, EurekaServerInstance, HelloWorldServiceInstance.
+Production Cluster:
+Nodes: [Node3, Node4].
+Services: Same as staging cluster.
+Relationships:
+Hosts the microservices (ConfigServer, EurekaServer, HelloWorldService).
 
-6. Docker Repository
-Instance:
-name: "AppDockerRepo"
-images: ["AppImage"]
-stages: ["build", "test"]
-This instance represents a Docker repository named "AppDockerRepo" containing the "AppImage" and having stages "build" and "test".
+##### 6. ConfigServer
+Provides configuration management for microservices.
+Attributes:
+port: int: The port on which the server runs.
+url: String: The URL for accessing the configuration server.
+Methods:
+loadConfiguration(): Supplies configuration dynamically to services.
+Object:
+URL: http://localhost:8888.
+Port: 8888.
+Relationships:
+Provides configuration to EurekaServer and other services.
 
-7. Pipeline
-Instance:
-pipelineId: "pipeline01"
-pipelineName: "CI/CD Pipeline"
-stages: ["build", "test", "deploy"]
-This represents a pipeline with the ID "pipeline01", named "CI/CD Pipeline", and having stages "build", "test", and "deploy".
+##### 7. EurekaServer
+Handles service discovery for microservices, allowing them to register and discover each other.
+Attributes:
+port: int: The port for accessing the Eureka server.
+Methods:
+registerService(instance: ServiceInstance): Registers a service instance with the Eureka server.
+discoverService(serviceName: String): Discovers registered services by name.
+Object:
+Port: 8761.
+Relationships:
+Manages the registration and discovery of microservices like HelloWorldService.
 
-8. Minikube
-Instance:
-version: "v1.2.3"
-status: "running"
-This represents a Minikube instance running version "v1.2.3" with a status of "running".
+##### 8. APIGateway
+Acts as the entry point for client requests, routing them to the appropriate services.
+Attributes:
+port: int: The port on which the gateway runs.
+Methods:
+forwardRequest(request: Request): Routes requests to services.
+healthCheck(): Performs health checks for the services.
+Object:
+Port: 8080.
+Relationships:
+Communicates with EurekaServer for service discovery and routes requests to HelloWorldService.
 
-9. Live Server
-Instance:
-serverId: "server01"
-name: "ProductionServer"
-ipAddress: "192.168.1.1"
-port: "80"
-This represents a live server with ID "server01", named "ProductionServer", located at IP address "192.168.1.1", and listening on port "80".
+##### 9. HelloWorldService
+Represents an example microservice deployed in the cluster.
+Attributes:
+port: int: The port on which the service runs.
+status: String: The current status of the service (e.g., active).
+Methods:
+processRequest(input: String): Processes a request from the client.
+Object:
+Port: 8081.
+Status: active.
+Relationships:
+Registers itself with EurekaServer.
+Receives configurations from ConfigServer.
 
-10. Git Repository (test)
-Instance:
-repositoryName: "TestRepo"
-repositoryUrl: "http://gitrepo.com/testrepo"
-branches: ["main", "test"]
-This represents a Git repository for testing purposes named "TestRepo", located at the specified URL, and containing branches "main" and "test".
+### Process Explanation
 
-11. Developer (test)
-Instance:
-name: "Bob"
-id: "dev02"
-This represents a developer named Bob with an ID of "dev02".
+1. Developers (Alice and Bob) push changes to application or test repositories.
+2. Webhook detects push events and triggers Jenkins pipelines.
+3. Jenkins runs smoke tests and deploys services to MinikubeCluster (staging or production).
+4. ConfigServer and EurekaServer manage configurations and service discovery for microservices.
+5. APIGateway routes client requests to the backend service, HelloWorldService.
 
-### Relationships and Interactions
-Push: Developers (Alice and Bob) push code to their respective Git repositories.
-Commit Code and Create Branch: These methods are part of the Git Repository class to manage code and branches.
-Webhook: Triggered by events in the Git repository, it notifies the Build Server.
-Build Server: Executes jobs based on webhook triggers.
-Docker Image and Repository: The build server pushes Docker images to the Docker repository.
-Pipeline: The pipeline is triggered, which then deploys the Docker image to Minikube for testing.
-Minikube and Live Server: After testing, the application is deployed from Minikube to the live server.
 
 
 </details>
 
 
-#### <a name="dm"></a>  4.2 Dynamic Models
+#### 4.2 Dynamic Models
 
 <details>
     <summary> The dynamic model of a CI/CD system provides a comprehensive view of the interactions and behaviors within the system over time </summary>

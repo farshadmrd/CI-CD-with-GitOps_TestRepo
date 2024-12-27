@@ -1,3 +1,8 @@
-**TODO : Please modify this file according to the following**
+The diagrams provided were created using Lucidchart. To access the original files for review or editing, please get in touch via email at farshadmrd.dev@gmail.com. This will grant you access to collaborate or view the diagrams directly on the platform.
 
-In this directory are stored resources for the drs.md file. For each file stored here a brief description must be provided
+
+
+
+
+
+

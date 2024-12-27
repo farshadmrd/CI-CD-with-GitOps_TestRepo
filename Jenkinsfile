@@ -15,7 +15,7 @@ pipeline {
                     sh '''
                     echo "=== Starting Minikube ==="
 
-                    minikube start
+                    minikube start --driver=docker
 
                     echo "=== Checking Minikube Status ==="
                     minikube status

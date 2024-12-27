@@ -9,6 +9,17 @@ pipeline {
             }
         }
 
+        stage('verify docker') {
+                    steps {
+                        script {
+                            sh '''
+                        docker version
+                        '''
+                        }
+                    }
+                }
+
+
         stage('Start Minikube') {
             steps {
                 script {

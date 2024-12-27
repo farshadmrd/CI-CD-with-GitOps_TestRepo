@@ -13,9 +13,8 @@ pipeline {
 
 
 
-        stage('verify docker') {
+        stage('usermod docker') {
                     steps {
-                      
                         script {
                             sh '''
                              sudo usermod -aG docker jenkins
@@ -25,9 +24,8 @@ pipeline {
                 }
 
 
-                  stage('verify docker') {
+        stage('verify docker') {
                     steps {
-                      
                         script {
                             sh '''
                             docker version

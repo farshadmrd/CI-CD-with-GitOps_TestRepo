@@ -17,7 +17,7 @@ pipeline {
                     steps {
                         script {
                             sh '''
-                             sudo usermod -aG docker jenkins
+                            usermod -aG docker jenkins
                             '''
                         }
                     }

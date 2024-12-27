@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo "=== Checking out the Repository ==="
-                git url: 'https://github.com/mnarizzano/se24-p08/', branch: 'main', credentialsId: 'github-token'
+                git url: 'https://github.com/farshadmrd/CI-CD-with-GitOps_TestRepo', branch: 'main'
             }
         }
 

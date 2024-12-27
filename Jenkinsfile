@@ -14,8 +14,7 @@ pipeline {
                 script {
                     sh '''
                     echo "=== Starting Minikube ==="
-                    minikube stop
-                    minikube delete
+
                     minikube start
 
                     echo "=== Checking Minikube Status ==="
